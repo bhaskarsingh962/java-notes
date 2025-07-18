@@ -129,10 +129,4 @@ Collections use	❌ No	✅ Yes
 
 Let me know if you want a visual diagram or want to compare it with a normal array!
 
-
-
-
-
-
-
-Ask ChatGPT
+this is all about arraylist
