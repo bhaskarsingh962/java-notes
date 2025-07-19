@@ -1,0 +1,1 @@
+in java the sirst latter of the class is always capital you can understand through this if any one has starting latter capital that means that is class
