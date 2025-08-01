@@ -18,6 +18,7 @@
  Parent p = new Child();
  p.method();
  in this parent class will create object refrence and the method  should be persent in parent class and child class also than the body of child class will executed
+ becouse the about objet is child there for child method will executed
 
 
 ## for example when you direct print object that's called object.toString method which is already made but if you made your own toString method in that case your method will override previous one
