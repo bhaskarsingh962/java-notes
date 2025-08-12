@@ -113,7 +113,7 @@ All variables are implicitly public static final.
 
 Interfaces cannot have constructors.
 
-Interfaces cannot be instantiated.
+Interfaces cannot be instantiated(can not create new object).
 
 🛠 3. Why Interface Variables Are public static final?
 Modifier	Reason
