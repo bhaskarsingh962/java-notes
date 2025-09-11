@@ -62,7 +62,7 @@ You write code in a .java file using any editor or IDE (like VS Code, IntelliJ).
 
 📄 File: HelloWorld.java
 
-## ⚙️ Step 2: Compilation (Using javac)
+##  Step 2: Compilation (Using javac)
 The Java source code is compiled into bytecode by the Java compiler.
 
 

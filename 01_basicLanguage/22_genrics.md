@@ -7,9 +7,6 @@ Generics allow you to write type-safe and reusable code by specifying a type par
 They prevent ClassCastException at runtime and provide compile-time type safety.
 
 🔹 Syntax:
-java
-Copy
-Edit
 class Box<T> {
     T value;
     void set(T value) { this.value = value; }

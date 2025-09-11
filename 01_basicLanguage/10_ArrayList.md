@@ -130,3 +130,54 @@ Collections use	❌ No	✅ Yes
 Let me know if you want a visual diagram or want to compare it with a normal array!
 
 this is all about arraylist
+
+
+
+
+
+
+
+## Can we make ArrayList of int type in Java?
+
+No, directly we cannot.
+Because ArrayList works only with objects, not with primitive data types like int, char, double, etc.
+
+But Java provides Wrapper Classes for every primitive type:
+
+int → Integer
+
+double → Double
+
+char → Character
+
+boolean → Boolean
+etc.
+
+✅ Correct way:
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        // Instead of int, we use Integer
+        ArrayList<Integer> numbers = new ArrayList<>();
+
+        numbers.add(10);  // Autoboxing: int -> Integer
+        numbers.add(20);
+        numbers.add(30);
+
+        System.out.println(numbers);  // [10, 20, 30]
+
+        // Getting values back
+        int x = numbers.get(1); // Auto-unboxing: Integer -> int
+        System.out.println("Second element: " + x);
+    }
+}
+
+✅ Why this works?
+
+Java internally converts int → Integer (called autoboxing) when adding into ArrayList.
+
+And Integer → int (called unboxing) when retrieving from ArrayList.
+
+✅ Example of Wrong Way (Compilation Error)
+ArrayList<int> list = new ArrayList<int>(); // ❌ Not allowed

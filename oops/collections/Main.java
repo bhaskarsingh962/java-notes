@@ -9,3 +9,4 @@ public class Main {
     PriorityQueue<Integer>pq = new PriorityQueue<>();
     Queue<Integer> q = new LinkedList<>();
 }
+System.out.println();

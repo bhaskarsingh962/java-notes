@@ -1,4 +1,4 @@
-type of ffunction
+## type of function
 call by value call by refrence in java 
 mutable immmutable
 premitive non premitive
@@ -146,3 +146,67 @@ Call by Reference	Objects → reference copied (affects original)
 Scope	Where a variable is visible
 Shadowing	Local var hides outer one with same name
 Varargs	Accepts variable number 
+
+
+
+
+
+## 1. Primitive in Java
+
+These are the basic data types built into Java.
+
+They are not objects.
+
+They store actual values directly in memory.
+
+✅ Example:
+
+int a = 10;     // stores the value 10 directly
+double b = 20.5;
+char c = 'A';
+boolean d = true;
+
+
+👉 Java has 8 primitives: byte, short, int, long, float, double, char, boolean.
+
+## 2. Non-Primitive in Java
+
+These are objects (reference types).
+
+They store the reference (memory address) of the object, not the value directly.
+
+Examples: String, Arrays, Classes, Interfaces, Wrapper classes.
+
+✅ Example:
+
+String name = "Bhaskar";     // reference to a String object
+int[] arr = {1, 2, 3};       // reference to an array object
+
+## 3. Mutable in Java
+
+Mutable means the object’s value can be changed after creation.
+
+✅ Example: StringBuilder and ArrayList are mutable.
+
+StringBuilder sb = new StringBuilder("Hello");
+sb.append(" World");  // changes the original object
+System.out.println(sb); // Output: Hello World
+
+## 4. Immutable in Java
+
+Immutable means once the object is created, its value cannot be changed.
+
+If you modify it, a new object is created instead.
+
+✅ Example: String in Java is immutable.
+
+String str = "Hello";
+str = str.concat(" World"); // creates a new String object
+System.out.println(str);    // Output: Hello World
+
+📌 Quick Summary
+Type	Definition	Example
+Primitive	Basic data types (not objects), store value directly	int a = 10;
+Non-Primitive	Objects or references	String s = "Hi";
+Mutable	Can be changed after creation	StringBuilder, ArrayList
+Immutable	Cannot be changed once created	String

@@ -5,7 +5,7 @@
 
 ## default access modifier in the diff package it will not allowed but in same package it can access everywhere
 
-## protected - can access everywhere except diff package of notSubclass 
+## protected - can access everywhere except diff Subclass of package 
 
 
 ## NOTE 
@@ -17,13 +17,15 @@ Access modifiers in Java determine the visibility (scope) of classes, variables,
 
 Types of Access Modifiers
 Modifier	Same Class	Same Package	Subclass (Same Package)	Subclass (Diff Package)	World (Other Unrelated Classes)
-public	✔	✔	✔	✔	✔
-protected	✔	✔	✔	✔	
-(no modifier)	✔	✔	✔		
+public	         ✔	       ✔	                  ✔	                     ✔	                   ✔
+protected	     ✔	       ✔	                  ✔	                     ✔	
+(no modifier)	 ✔	       ✔	                  ✔		
+default
+private	         ✔	
 
 
-private	✔				
-1. public
+
+## 1. public
 Accessible from:
 Anywhere (any other class, any package).
 
@@ -36,7 +38,9 @@ public class Person {
         System.out.println("Hello, my name is " + name);
     }
 }
-2. protected
+
+
+## 2. protected
 Accessible from:
 
 Same class
@@ -59,7 +63,9 @@ class Dog extends Animal {
         eat(); // Allowed: protected method accessed in subclass
     }
 }
-3. No Modifier (Package-Private / Default)
+
+
+## 3. No Modifier (Package-Private / Default)
 Accessible from:
 
 Same class
@@ -69,20 +75,17 @@ Other classes in the same package only
 Not accessible from subclasses in different packages or from unrelated classes in other packages.
 
 Example:
-
-java
 class PackageExample {
     void show() { // no modifier = package-private
         System.out.println("Visible in the same package only");
     }
 }
-4. private
+
+
+## 4. private
 Accessible from:
 Only within the same class.
-
 Example:
-
-java
 public class Secret {
     private String pin;
 
@@ -90,8 +93,9 @@ public class Secret {
         System.out.println("PIN is: " + pin);
     }
 }
-Complete Example
-java
+
+
+## Complete Example
 package mypackage;
 
 public class Demo {
@@ -117,7 +121,9 @@ public class Test extends Demo {
         // System.out.println(d); // private ✘ (never accessible)
     }
 }
-Interview Questions & Answers
+
+
+## Interview Questions & Answers
 Q1: What are the four access modifiers in Java, and what are their differences?
 A: The four access modifiers are public, protected, (default) package-private, and private.
 
@@ -156,9 +162,3 @@ public class Dog extends Animal {
         System.out.println(legs); // Accessing protected member from superclass
     }
 }
-Summary Table (as per interview)
-Modifier	Class	Package	Subclass (Same Pkg)	Subclass (Other Pkg)	Outside World
-public	✔	✔	✔	✔	✔
-protected	✔	✔	✔	✔	
-no modifier	✔	✔	✔		
-private	✔				

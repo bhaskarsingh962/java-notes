@@ -438,3 +438,85 @@ Graceful Failure: At the top level of your application (like a web request handl
 External Input: If you are working with input that you cannot control and it might lead to a runtime error, catching the exception can be a valid way to handle the invalid input.
 
 Resource Cleanup: To ensure that critical resources are closed or cleaned up, even if an unexpected error occurs.
+
+
+
+
+
+
+
+
+
+
+## 🔹 1. throw (used inside a method/block)
+
+The throw keyword is used to actually create and throw an exception object.
+
+You can throw only one exception at a time.
+
+Syntax:
+
+throw new ExceptionType("message");
+
+
+✅ Example:
+
+class TestThrow {
+    public static void main(String[] args) {
+        int age = 15;
+        if (age < 18) {
+            // throwing an unchecked exception
+            throw new IllegalArgumentException("You must be 18+ to vote");
+        }
+        System.out.println("You can vote!");
+    }
+}
+
+🔹 2. throws (used in method declaration)
+
+The throws keyword is used in the method signature to declare which checked exceptions the method might throw.
+
+It doesn’t throw the exception itself — it just tells the caller:
+"If something goes wrong inside me, you must handle it."
+
+✅ Example:
+
+import java.io.*;
+
+class TestThrows {
+    public static void readFile() throws IOException {
+        FileReader fr = new FileReader("test.txt"); // may throw checked exception
+        fr.read();
+        fr.close();
+    }
+
+    public static void main(String[] args) {
+        try {
+            readFile();  // must handle checked exception
+        } catch (IOException e) {
+            System.out.println("File not found or error while reading: " + e.getMessage());
+        }
+    }
+}
+
+🔹 3. Throwable
+
+Throwable is the superclass of all errors and exceptions in Java.
+
+Error → JVM-related serious problems (like OutOfMemoryError).
+
+Exception → Recoverable problems (like IOException, NullPointerException).
+
+✅ Difference between throw and throws
+Feature	throw	throws
+Used for	Actually throwing exception	Declaring exception
+Place of use	Inside method/block	In method signature
+How many	Only one exception object	Multiple exceptions (comma separated)
+Example	throw new IOException();	void m() throws IOException, SQLException
+🔑 So, to answer your question:
+
+throw → used to throw an exception object.
+
+throws → used to declare checked exceptions in method signature.
+
+Checked exceptions can also be handled by try-catch instead of throws.

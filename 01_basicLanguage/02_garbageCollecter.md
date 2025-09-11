@@ -74,3 +74,24 @@ G1 (Garbage First) – default in modern Java, balances throughput and pause tim
 ## Q: Can you force garbage collection in Java?
 A: No. You can only request it via System.gc(), but the JVM may ignore it.
 
+## ✅ When does Garbage Collector run?
+
+When JVM decides memory is low
+
+If heap memory is filling up, JVM triggers GC to reclaim unused memory.
+
+When objects become unreachable
+
+Example:
+
+String s = new String("Hello");
+s = null;  // "Hello" object becomes unreachable → eligible for GC
+
+
+When you call System.gc() or Runtime.getRuntime().gc()
+
+This is only a request, not a guarantee. JVM may ignore it.
+
+During idle time of CPU / JVM optimization
+
+If the JVM notices the system is idle, it may run GC to clean up memory.

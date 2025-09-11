@@ -1,15 +1,15 @@
-## encapsulation - wrpping up the implementaion of the data number and method in class. binding all the method and properties and hiding from outside the world
+## encapsulation - wrpping up the implementaion of the data member and method in class. binding all the method and properties and hiding from outside the world
 --implementation level isssue
 --containing information
 
-example when you make any property private to access that you can getter method by using getter method you can access that peroperty in main class this is example  .
+example when you make any property private to access that you use can getter method by using getter method you can access that peroperty in main class this is example  .
+and also you can set value by setter method 
 
 ## Abstarction - hiding unneccesary details and showing esential information - like you are use collectionlibrary or you are using method from that but that time you just using those function but implementation of those is hidden when you do ctr + click on method then you can see that method
 -- design issue
 -- gaining information
 
 
-✅ Encapsulation in Java
 📌 Definition:
 Encapsulation is the process of wrapping data (variables) and code (methods) into a single unit (class), and restricting direct access to some of the object's components.
 
@@ -22,31 +22,48 @@ Improves security and maintainability of code.
 
 Ensures controlled access to fields.
 
-🧠 Example:
-java
-Copy
-Edit
-class Student {
-    private String name;  // private = encapsulated
 
-    // public getter
+## Problem here:
+
+Anyone can directly change name to anything, even an invalid value (like null, empty string, or "1234").
+
+No control over the data.
+
+Breaks security and data integrity.
+
+encapsulation solve all these issue
+
+## 🧠 Example:
+
+class Student {
+    private String name;  // private -> hidden from outside
+
+    // Setter with validation
+    public void setName(String name) {
+        if (name != null && !name.isEmpty()){
+            this.name = name;
+        }else {
+            System.out.println("❌ Invalid name!");
+        }
+    }
+
+    // Getter
     public String getName() {
         return name;
     }
-
-    // public setter
-    public void setName(String name) {
-        this.name = name;
-    }
 }
 
-public class Main {
+public class Test {
     public static void main(String[] args) {
         Student s = new Student();
-        s.setName("Bhaskar");  // access through method
+        s.setName("Bhaskar");   // ✅ controlled access
         System.out.println(s.getName());
+        s.setName("");          // ❌ won't allow invalid input
     }
 }
+
+
+
 📒 Summary:
 Feature	Encapsulation
 Focus	Internal implementation
@@ -54,7 +71,10 @@ Access control	Yes (private + getters/setters)
 Design type	Implementation-level
 Real-world example	ATM machine: card/pin is hidden
 
-✅ Abstraction in Java
+
+
+
+## ✅ Abstraction in Java
 📌 Definition:
 Abstraction is the process of hiding unnecessary details and showing only essential information to the user.
 
@@ -68,9 +88,7 @@ Abstract classes
 Interfaces
 
 🧠 Example:
-java
-Copy
-Edit
+
 abstract class Animal {
     abstract void makeSound();  // only declaration, not implementation
 
@@ -99,13 +117,16 @@ Access control	No (it's about design)
 Design type	Design-level
 Real-world example	Driving a car: only use steering, brake, etc., not know engine internals
 
-🔄 Difference Between Encapsulation and Abstraction
-Feature	Encapsulation	Abstraction
-Definition	Wrapping code and data into a single unit	Hiding unnecessary details
-Level	Implementation level	Design level
-Goal	Data hiding and security	Reduce complexity, focus on "what" not "how"
-How it’s achieved	Using access modifiers (private, public)	Using abstract classes and interfaces
-Focus	How to protect data	What to expose
+
+
+## 🔄 Difference Between Encapsulation and Abstraction
+Feature	                      Encapsulation	                                Abstraction
+Definition	        Wrapping code and data into a single unit	     Hiding unnecessary details
+Level	            Implementation level	                         Design level
+Goal	            Data hiding and security	Reduce complexity,   focus on "what" not "how"
+How it’s achieved	Using access modifiers (private, public)	     Using abstract classes and interfaces
+Focus	            How to protect data	What to expose
+    
 Example	Private fields + getter/setter	Abstract class/interface
 
 🎯 Interview Questions & Answers:
@@ -116,7 +137,7 @@ Q2. What is abstraction in Java?
 Abstraction is the concept of hiding internal implementation details and showing only functionality. In Java, it is achieved using abstract classes and interfaces.
 
 Q3. What’s the difference between abstraction and encapsulation?
-Encapsulation hides the data; abstraction hides the implementation.
+## imp - Encapsulation hides the data; abstraction hides the implementation.
 
 Encapsulation is about access control (private/protected); abstraction is about design and what functionality to expose.
 

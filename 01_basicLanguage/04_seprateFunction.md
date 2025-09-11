@@ -144,7 +144,6 @@ When asked “What is JDK and how does it work?”, say:
 
 JDK is a software development kit that provides all tools needed to compile, package, and run Java programs. It includes the compiler (javac), runtime environment (JRE), archiver (jar), and documentation tools. It compiles Java source code into platform-independent bytecode, which is then executed by a JVM specific to the platform, making Java platform-independent.
 
-Would you like a full diagram with this flow? I can generate that for you too.
 
 
 
@@ -154,8 +153,8 @@ Would you like a full diagram with this flow? I can generate that for you too.
 
 ## Let me explain the entire flow in simple and complete steps, covering Compile Time and Runtime, as shown in the image.
 
-🔹 PART 1: Compile Time (Handled by JDK)
-🔸 Step 1: Write Java Code → .java file
+## 🔹 PART 1: Compile Time (Handled by JDK)
+## 🔸 Step 1: Write Java Code → .java file
 You write source code like:
 
 
@@ -164,7 +163,7 @@ public class Hello {
         System.out.println("Hello Java");
     }
 }
-🔸 Step 2: Compile using javac → .class file
+## 🔸 Step 2: Compile using javac → .class file
 The Java compiler (javac) converts .java → .class file.
 
 The .class file contains bytecode, which is platform-independent.
@@ -173,10 +172,10 @@ This step is part of the JDK (Java Development Kit).
 
 
 .javac Hello.java  →  Hello.class
-🔹 PART 2: Runtime (Handled by JVM)
+## 🔹 PART 2: Runtime (Handled by JVM)
 Now we enter JVM execution, which includes Class Loader, Bytecode Verifier, Interpreter, JIT, etc.
 
-🔸 Step 3: Class Loader
+## 🔸 Step 3: Class Loader
 Responsible for loading .class file into memory.
 
 Class Loader has 3 Phases:
@@ -200,7 +199,7 @@ Assigns final values to static variables.
 
 Executes static blocks (if any).
 
-🔸 Step 4: Byte Code Verifier
+## 🔸 Step 4: Byte Code Verifier
 Checks the bytecode for:
 
 Security violations
@@ -211,7 +210,7 @@ Access to memory
 
 ✅ Ensures bytecode follows JVM rules, so it won’t crash or do illegal things.
 
-🔸 Step 5: Interpreter
+## 🔸 Step 5: Interpreter
 Executes bytecode line-by-line:
 
 Easy to implement
@@ -220,14 +219,14 @@ But slow if the same method is called again and again
 
 That's where JIT (Just-In-Time) compiler helps
 
-🔸 Step 6: JIT Compiler (part of JVM)
+## 🔸 Step 6: JIT Compiler (part of JVM)
 If a method is called repeatedly, JIT converts it to machine code just once.
 
 ✅ So, it boosts performance by avoiding repeated interpretation.
 
 🔥 JIT = Makes Java fast like C++ for frequently used code
 
-🔸 Step 7: Runtime
+## 🔸 Step 7: Runtime
 This is where the actual execution happens.
 
 JVM interacts with Java Runtime Environment (JRE).
@@ -242,7 +241,7 @@ Garbage collection
 
 Exception handling
 
-🔸 Step 8: Hardware
+## 🔸 Step 8: Hardware
 Finally, machine code is executed on your CPU/Hardware.
 
 📌 JVM Execution Summary (from image):

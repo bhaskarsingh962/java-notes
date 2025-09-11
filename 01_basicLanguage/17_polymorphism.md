@@ -1,13 +1,13 @@
 ## polymorphism
 
-## 1- compile time / Static polimorphish - this achived by method overloading
+## 1- compile time / Static polimorphishm - this achived by method overloading
  -- same name but type arguments or ordering or signature is diff example multiple constructer
  A a = new A();
  A a = new A(3, 4);
 
 
 ## 2- run time / Dynamic polymorphism - Achived by method overriding
- --when the same method is created in parent class and child class thats the MO . child method will override parent method. only body of the function can be different all other things will same
+ --when the same method is created in parent class and child class thats the MO . child method will override parent method. only body of the function can be different all other things will be same
 
 ## when you create like this
  Shapes shape = new Shapes();
@@ -15,10 +15,33 @@
  Shapes square = new Square();
 
 ## this is also known as Dynamic method dispetch becouse java decide it which method has to run at run time 
- Parent p = new Child();
- p.method();
- in this parent class will create object refrence and the method  should be persent in parent class and child class also than the body of child class will executed
- becouse the about objet is child there for child method will executed
+🔹 Explanation
+
+## Parent p1 = new Parent();
+
+Reference → Parent
+
+Object → Parent
+
+Executes Parent’s method.
+
+## Parent p2 = new Child(); (Upcasting)
+
+Reference → Parent
+
+Object → Child
+
+At compile time, Java only checks if Parent has a display() method (✅ it has).
+
+At runtime, JVM looks at the object type (Child) → executes Child’s method.
+
+## Child c1 = new Child();
+
+Reference → Child
+
+Object → Child
+
+## 👉 This is why it’s called Dynamic Method Dispatch – because the method to execute is decided at runtime based on the actual object type, not reference type.
 
 
 ## for example when you direct print object that's called object.toString method which is already made but if you made your own toString method in that case your method will override previous one
@@ -35,150 +58,90 @@
 ## both method overriding and method overloading does'nt depends on instence variable
 
 ## /////////// late binding / Early binding//////////////
-## overriding is take place at run time when everything is done that's why its know as late binding .however a called which is done in compile time only is know as early binding
+## 🔹 Early Binding (Compile-time Binding)
 
+Happens at compile time.
 
+The method call is decided by the compiler.
 
-## AI notes
+Usually happens with:
 
-# Java Inheritance: Complete Notes
+Method overloading
 
----
+Static methods
 
-## 📘 Types of Inheritance in Java
+Private methods
 
-### 1. Single Inheritance
+Final methods
 
-* **Definition**: One class inherits from another.
-* **Example**:
+👉 Because these cannot be overridden, the compiler already knows which method to call.
 
-  ```java
-  class Animal {
-      void sound() { System.out.println("Animal sound"); }
-  }
-  class Dog extends Animal {
-      void bark() { System.out.println("Bark"); }
-  }
-  ```
+Example: Early Binding
+class Test {
+    void show(int a) {
+        System.out.println("int method called");
+    }
 
-### 2. Multilevel Inheritance
+    void show(String s) {
+        System.out.println("String method called");
+    }
 
-* **Definition**: A class is derived from another derived class.
-* **Example**:
-
-  ```java
-  class Animal {
-      void sound() { System.out.println("Animal sound"); }
-  }
-  class Dog extends Animal {
-      void bark() { System.out.println("Bark"); }
-  }
-  class Puppy extends Dog {
-      void weep() { System.out.println("Weep"); }
-  }
-  ```
-
-### 3. Hierarchical Inheritance
-
-* **Definition**: Multiple classes inherit from a single parent class.
-* **Example**:
-
-  ```java
-  class Animal {
-      void sound() { System.out.println("Animal sound"); }
-  }
-  class Dog extends Animal {
-      void bark() { System.out.println("Bark"); }
-  }
-  class Cat extends Animal {
-      void meow() { System.out.println("Meow"); }
-  }
-  ```
-
-### 4. Multiple Inheritance (with classes) ❌ Not Supported
-
-* **Java does not support multiple inheritance with classes** to avoid ambiguity.
-
-#### Example Problem:
-
-```java
-class A {
-    void show() { System.out.println("From A"); }
-}
-class B {
-    void show() { System.out.println("From B"); }
-}
-// class C extends A, B { // Not allowed
-```
-
-### 5. Multiple Inheritance (with Interfaces) ✅ Supported
-
-* **Java allows multiple inheritance using interfaces.**
-
-#### Example:
-
-```java
-interface A {
-    void show();
-}
-interface B {
-    void show();
-}
-class C implements A, B {
-    public void show() {
-        System.out.println("Resolved show method");
+    static void display() {
+        System.out.println("Static display method");
     }
 }
-```
 
-### 6. Hybrid Inheritance ✅ Supported via Interfaces
+public class EarlyBindingExample {
+    public static void main(String[] args) {
+        Test t = new Test();
+        t.show(10);        // Compiler knows -> calls int method
+        t.show("Hello");   // Compiler knows -> calls String method
 
-* **Combination of more than one type of inheritance** (e.g., Hierarchical + Multiple).
-* **Only allowed via interfaces to avoid ambiguity.**
-
----
-
-## 🔑 Key Points
-
-* Java supports **Single**, **Multilevel**, and **Hierarchical** inheritance with classes.
-* Java **does not support multiple inheritance with classes** to avoid ambiguity.
-* **Interfaces** allow multiple and hybrid inheritance.
-* If two interfaces have the same method signature, implementing class **must override** it.
-* Helps maintain clear method resolution.
-
----
-
-## ❓ Interview Questions & Answers
-
-### Q1: Why doesn't Java support multiple inheritance with classes?
-
-**Ans**: To avoid ambiguity caused when two superclasses have methods with the same signature. Java chooses simplicity and clarity by disallowing it.
-
-### Q2: How does Java achieve multiple inheritance?
-
-**Ans**: By using interfaces. A class can implement multiple interfaces, and if there's conflict, it must override the conflicting method.
-
-### Q3: What is hierarchical inheritance?
-
-**Ans**: When multiple classes inherit from a single parent class. Java supports it because it causes no ambiguity.
-
-### Q4: Is hybrid inheritance supported in Java?
-
-**Ans**: Yes, but only through interfaces. Java does not support hybrid inheritance using classes due to ambiguity.
-
-### Q5: What is the difference between class inheritance and interface inheritance?
-
-**Ans**:
-
-* Class inheritance uses `extends`, only one superclass allowed.
-* Interface inheritance uses `implements`, allows multiple interfaces.
-
----
-
-> 📁 Save this as `java_inheritance.md` in your VS Code for best usage.
+        Test.display();    // Compiler knows it's static
+    }
+}
 
 
-➕ Method Overloading (Compile-Time Polymorphism)
+✅ Here, method selection is done at compile time, so this is Early Binding.
+
+## 🔹 Late Binding (Run-time Binding / Dynamic Method Dispatch)
+
+Happens at runtime.
+
+The method to execute is decided by JVM depending on the actual object.
+
+Always occurs with method overriding.
+
+Example: Late Binding
+class Parent {
+    void show() {
+        System.out.println("Parent show()");
+    }
+}
+
+class Child extends Parent {
+    @Override
+    void show() {
+        System.out.println("Child show()");
+    }
+}
+
+public class LateBindingExample {
+    public static void main(String[] args) {
+        Parent p = new Child(); // reference type: Parent, object type: Child
+        p.show();               // JVM decides at runtime -> Child show()
+    }
+}
+
+
+✅ Even though reference is of Parent, the Child method executes at runtime.
+That’s why this is Late Binding.
+
+
+
+
+
+## ➕ Method Overloading (Compile-Time Polymorphism)
 Definition: When multiple methods in the same class have the same name but different parameters (type, number, or order).
 
 Happens at: Compile Time (Early Binding)
@@ -186,9 +149,7 @@ Happens at: Compile Time (Early Binding)
 Use Case: Improves code readability and flexibility.
 
 Example:
-java
-Copy
-Edit
+
 class Calculator {
     int add(int a, int b) {
         return a + b;
@@ -200,7 +161,9 @@ class Calculator {
         return a + b + c;
     }
 }
-🔁 Method Overriding (Run-Time Polymorphism)
+
+
+## 🔁 Method Overriding (Run-Time Polymorphism)
 Definition: When a subclass provides a specific implementation of a method already defined in its parent class.
 
 Happens at: Runtime (Late Binding)
@@ -208,9 +171,7 @@ Happens at: Runtime (Late Binding)
 Use Case: Achieves dynamic behavior and flexibility.
 
 Example:
-java
-Copy
-Edit
+
 class Animal {
     void sound() {
         System.out.println("Animal makes a sound");
@@ -222,7 +183,9 @@ class Dog extends Animal {
         System.out.println("Dog barks");
     }
 }
-🔀 Dynamic Method Dispatch (Runtime Polymorphism)
+
+
+## 🔀 Dynamic Method Dispatch (Runtime Polymorphism)
 Definition: Mechanism by which a call to an overridden method is resolved at runtime, not at compile time.
 
 Key Rule: Happens when a superclass reference refers to a subclass object.
