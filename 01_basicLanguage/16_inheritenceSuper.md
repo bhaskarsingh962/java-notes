@@ -16,7 +16,19 @@
 ## This line will give a compilation error, unless:
 You have a constructor in Child that accepts three parameters (with types matching p1, p2, c1).
 
-p1, p2, and c1 are already declared and initialized variables in scope.
+## Parent ref = new Child();
+if you are doing this you can access all the parent methods and those method which is override by child not any other child method 
+
+## Child p1 = new Parent(); - this is not allowed 
+becouse not all child property is overrirde from parent there fore if you access any parent property that will not access
+Child extends Parent means:
+Every Child object has all properties of Parent, plus some extra of its own.
+But the reverse is not true:
+A Parent object does not have the extra things that belong to Child.
+
+
+
+## p1, p2, and c1 are already declared and initialized variables in scope.
 
 The constructor signature in Child must match the argument types you're passing.
 

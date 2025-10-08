@@ -1,5 +1,16 @@
 ## polymorphism
 
+## importent point in dyanmic method dispatch in c++ vs java
+“In Java, when a method is called on an object, it first checks in the derived class (child).
+If not found, it goes to the parent class.” ✅
+That’s exactly correct — and it’s because in Java,
+# all non-static, non-final, non-private methods are virtual by default.
+That means Java always does dynamic (runtime) dispatch,
+while C++ does it only if you mark a function as virtual.
+
+
+
+
 ## 1- compile time / Static polimorphishm - this achived by method overloading
  -- same name but type arguments or ordering or signature is diff example multiple constructer
  A a = new A();
@@ -8,6 +19,9 @@
 
 ## 2- run time / Dynamic polymorphism - Achived by method overriding
  --when the same method is created in parent class and child class thats the MO . child method will override parent method. only body of the function can be different all other things will be same
+Late binding in Java happens only when a parent reference variable refers to a child class object, and the child overrides the parent’s method.
+The decision of which version of the method to call is made at runtime by the JVM, not by the compiler.
+
 
 ## when you create like this
  Shapes shape = new Shapes();
@@ -15,8 +29,6 @@
  Shapes square = new Square();
 
 ## this is also known as Dynamic method dispetch becouse java decide it which method has to run at run time 
-🔹 Explanation
-
 ## Parent p1 = new Parent();
 
 Reference → Parent
@@ -165,7 +177,6 @@ class Calculator {
 
 ## 🔁 Method Overriding (Run-Time Polymorphism)
 Definition: When a subclass provides a specific implementation of a method already defined in its parent class.
-
 Happens at: Runtime (Late Binding)
 
 Use Case: Achieves dynamic behavior and flexibility.
@@ -191,9 +202,7 @@ Definition: Mechanism by which a call to an overridden method is resolved at run
 Key Rule: Happens when a superclass reference refers to a subclass object.
 
 Example:
-java
-Copy
-Edit
+
 class Animal {
     void sound() {
         System.out.println("Animal makes a sound");

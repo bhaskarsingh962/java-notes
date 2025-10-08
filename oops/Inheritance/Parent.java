@@ -11,5 +11,8 @@ public class Parent {
    public Parent(String parent1){
      this.parent1 = parent1;
    }
+   public void parent(){
+    System.out.println("this  is parent method");
+   }
 }
 

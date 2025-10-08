@@ -7,4 +7,7 @@ public class Child extends Parent {
       super(parent1);
       this.child1 = child1; 
     }
+    public void child(){
+      System.out.println("this is child method");
+    }
 }
