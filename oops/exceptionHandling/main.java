@@ -9,8 +9,6 @@ class InvalidAgeException extends Exception {
     }
 }
 
-
-
 class Voter {
     public void checkEligibility(int age) throws InvalidAgeException {
         if (age < 18) {

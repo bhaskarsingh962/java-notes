@@ -8,7 +8,6 @@ Exception = Runtime error that disrupts the normal flow of a program.
 ## ⚡ 2. When Exception Occurs
 
 An exception occurs when something unexpected happens at runtime, e.g.:
-
 int a = 10 / 0;  // ArithmeticException
 int[] arr = new int[3];
 System.out.println(arr[5]);  // ArrayIndexOutOfBoundsException
@@ -174,7 +173,6 @@ try {
 }
 
 # ⚡ 11. Best Practices for Interview
-
 ✅ Always handle specific exceptions first, then generic.
 ✅ Don’t catch exceptions you can’t handle.
 ✅ Use custom exceptions for business logic.

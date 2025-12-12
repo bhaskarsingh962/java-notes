@@ -7,22 +7,15 @@
 
 
 ## what is the constructer in java and what is this key word and why we use it explain everything 
-
 Let's learn Java Constructors and the this keyword from beginner to advanced — step by step with simple explanations and examples.
-
 ##  What is a Constructor in Java?
 ✅ Definition:
 A constructor is a special method used to create and initialize objects in Java.
-
 ## 💡 Key Points:
 It has the same name as the class.
-
 It does not have a return type (not even void).
-
 It is automatically called when you create an object using new.
-
 🧪 Example 1: Basic Constructor
-
 class Student {
     // Constructor
     Student() {
@@ -44,12 +37,9 @@ Welcome, student!
 
 
 ## 🔄 Types of Constructors
-
 ## 1. Default Constructor
 No parameters.
-
 Java gives a default constructor if you don't write one.
-
 java
 class Dog {
     Dog() {
@@ -60,11 +50,8 @@ class Dog {
 
 
 ## 2. No-argument Constructor (User-defined Default)
-
 A constructor without parameters, but defined by you.
-
 Used when you want to set initial values.
-
 Example:
 
 class Student {
@@ -113,14 +100,11 @@ class Dog {
 
 
 ## 4🔹 What is a Copy Constructor in Java?
-
 A Copy Constructor is a special type of constructor that is used to create a new object as a copy of an existing object.
 In Java, it’s not provided by default (unlike C++), but we can create it manually.
-
 🔹 Syntax of Copy Constructor
 class ClassName {
     int x;
-    
     // Copy Constructor
     ClassName(ClassName obj) {
         this.x = obj.x;  // copying value from existing object
@@ -160,62 +144,39 @@ public class CopyConstructorExample {
 }
 
 ## 🔹 Key Points
-
 Java doesn’t create a copy constructor automatically, we must define it explicitly.
-
 Copy constructor is an alternative to clone() method (from Object class).
-
 If the class has mutable objects (like arrays, lists, etc.), the copy constructor should handle deep copy to avoid shared references.
 
 
 
 ## 🔹 Summary (Interview Notes)
-
 Default Constructor: Created by compiler if no constructor is defined.
-
 No-arg Constructor: Written by programmer, takes no arguments.
-
 Parameterized Constructor: Written by programmer, takes arguments to initialize objects.
-
 📌 Important Points:
-
 If no constructor is written → compiler gives default constructor.
-
 If any constructor is written → compiler does not give default constructor.
-
 Constructors can be overloaded (multiple constructors with different parameter lists).
-
-
-
-
-
 
 
 
 ## 🔁 What is the this Keyword?
 ✅ this refers to current object of the class.
 We use this to:
-
 Refer to instance variables (when parameter name and variable name are same)
-
 Call other constructors
-
 Pass current object as an argument
-
 Return current object
-
 🧪 Example 2: this to refer to instance variable
 class Car {
     String model;
-
     Car(String model) {
         this.model = model;  // 'this.model' is the class variable, 'model' is the parameter
     }
-
     void show() {
         System.out.println("Model is: " + model);
     }
-
     public static void main(String[] args) {
         Car c1 = new Car("Swift");
         c1.show();
@@ -224,7 +185,6 @@ class Car {
 📌 Without this.model, Java would be confused (both names are same). this.model refers to the class variable.
 
 ## 🧪 Example 3: this() to call another constructor
-
 class Book {
     String name;
     int pages;
@@ -261,13 +221,9 @@ this()	Calls another constructor
 this	Refers to current object
 
 
-
-
-
 ## What is the new keyword in Java?
 ✅ Definition:
 The new keyword in Java is used to:
-
 🔧 Create objects (i.e., instances) of a class
 📦 It also allocates memory for the object in the heap
 
@@ -367,18 +323,11 @@ boolean	Boolean
 
 ## 🔹 Why Do We Need Wrapper Classes?
 ✅ To use primitive data types as objects.
-
 ✅ For collection framework (ArrayList, HashMap, etc.) which works only with objects.
-
 ✅ To support object-oriented features like polymorphism and generics.
-
 ✅ To use utility methods provided by wrapper classes (e.g., Integer.parseInt()).
-
 ✅ For autoboxing and unboxing.
-
 🔹 Simple Example
-java
-Copy code
 public class WrapperExample {
     public static void main(String[] args) {
         int primitive = 10;
@@ -402,7 +351,6 @@ public class WrapperExample {
 }
 🔹 Autoboxing and Unboxing (Java 5 onwards)
 Autoboxing: Java automatically converts a primitive to a wrapper object.
-
 
 int x = 100;
 Integer y = x; // autoboxing
@@ -464,15 +412,11 @@ Let me know if you want a quick revision table or flashcards for this topic.
 final Keyword in Java – 
 ## 🔹 What is final in Java?
 The final keyword in Java is used to restrict the user. It can be used with:
-
 Variables → to make the value constant
-
 Methods → to prevent overriding
-
 Classes → to prevent inheritance
 
 ## 🔸 1. final Variable – Value cannot be changed after initialization.
-java
 
 public class FinalVariableExample {
     public static void main(String[] args) {
@@ -486,7 +430,6 @@ final double PI = 3.14159;
 
 
 ## 🔸 2. final Method – Cannot be overridden by subclass.
-
 class Vehicle {
     final void run() {
         System.out.println("Vehicle is running");
@@ -505,7 +448,6 @@ public class FinalMethodExample {
 
 
 ## 🔸 3. final Class – Cannot be extended (i.e., inherited).
-
 final class Animal {
     void sound() {
         System.out.println("Animal makes sound");
@@ -513,7 +455,6 @@ final class Animal {
 }
 
 // class Dog extends Animal {} ❌ Error: Cannot subclass the final class
-
 public class FinalClassExample {
     public static void main(String[] args) {
         Animal a = new Animal();
@@ -532,7 +473,6 @@ Can we initialize a final variable later?	✅ Yes, if it’s a blank final varia
 Can a final object’s internal data be changed?	✅ Yes, but you cannot reassign the reference.
 
 ## 🔸 Bonus: final with Objects
-
 final Student s = new Student("Bhaskar");
 // s = new Student("Amit"); ❌ Error: Cannot reassign final reference
 s.name = "Amit"; // ✅ Allowed: modifying object state is fine

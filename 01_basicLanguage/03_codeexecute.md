@@ -59,38 +59,25 @@
 
 ## Step 1: Write the Java Code
 You write code in a .java file using any editor or IDE (like VS Code, IntelliJ).
-
 📄 File: HelloWorld.java
-
 ##  Step 2: Compilation (Using javac)
 The Java source code is compiled into bytecode by the Java compiler.
-
-
 javac HelloWorld.java
 🔄 This generates:
-
-
 HelloWorld.class
 ✅ Bytecode is a platform-independent, intermediate code that Java Virtual Machine (JVM) can understand.
 
 ## 🧠 Step 3: Class Loader Loads the Bytecode
 The Class Loader of the JVM loads .class files into method area of JVM memory.
-
 Loads required classes.
-
 Verifies security and integrity.
-
 Handles parent-delegation model.
 
 ## 🔍 Step 4: Bytecode Verification
 The Bytecode Verifier ensures:
-
 No stack overflow.
-
 No illegal data conversions.
-
 Safe and valid bytecode.
-
 ✅ Prevents runtime crashes and security issues.
 
 ## 🧠 Step 5: JVM Execution Begins
@@ -98,17 +85,13 @@ The JVM (Java Virtual Machine) starts executing the bytecode.
 
 ## 🧩 Step 6: Execution Engine
 The Execution Engine interprets and/or compiles bytecode into native machine code.
-
 It has two key components:
-
 1. Interpreter:
 Reads bytecode line-by-line.
-
 Slower, used initially.
 
 2. JIT Compiler (Just-In-Time):
 Converts frequently used code blocks into native machine code.
-
 Improves performance by caching compiled code.
 
 ## 💾 Step 7: Runtime Memory Management (JVM Memory Areas)
@@ -120,22 +103,16 @@ Stack	Stores method calls, local variables
 Method Area	Stores class metadata
 PC Register	Keeps track of current instruction
 Native Method Stack	For native (non-Java) methods
-
 🧹 Garbage Collector automatically clears unused objects from Heap.
 
 ## 🖨️ Step 8: Output is Displayed
 System.out.println("Hello, Bhaskar!");
 This prints the output on the console.
-
 Copy code
 Hello, Bhaskar!
 
-
-
 ## Explain how Java ensures platform independence."
-
 ✅ Say:
-
 “Java source code is compiled into bytecode, which runs on the JVM. Since each OS has its own JVM, Java code can run anywhere, making it platform-independent — Write Once, Run Anywhere (WORA). ” 
 
 
@@ -165,8 +142,6 @@ To run on Linux or Mac, you need to recompile the C++ code for those systems.
 
 "Java is platform-independent but JVM is platform dependent."
 ✅ Yes! This is the key idea:
-
 Your .class file (bytecode) → ✅ Same across platforms
-
 JVM → ❌ Different for Windows, Linux, Mac (each OS has its own JVM)
 

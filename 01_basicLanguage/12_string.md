@@ -1,35 +1,26 @@
 String is a class in java
-
 String name = "bhaskar";
 data-tyope refrence = object;
 
 ## 1. What is a String in Java?
 In Java, a String is a sequence of characters, like "hello", "bhaskar".
-
 It is an object of the String class.
-
 Strings are immutable in Java (once created, they cannot be changed).
 
 ## 🔸 2. Creating Strings in Java
 ✅ Two Ways:
 👉 (A) Using String Literal:
-
 String a = "bhaskar";
 String b = "bhaskar";
 🧠 Behind the scenes:
 
 Both a and b refer to the same object in the String pool (in heap memory).
-
 Java optimizes memory by using a String pool, so "bhaskar" is stored once.
-
 👉 (B) Using new keyword:
-
 String c = new String("bhaskar");
 String d = new String("bhaskar");
 🧠 Here:
-
 c and d are different objects in heap memory.
-
 Even though the value is same ("bhaskar"), they are not pointing to the same memory.
 
 🔸 3. Comparing Strings
@@ -62,11 +53,10 @@ equals(str)	Compares content	"a".equals("a") → true
 String a = "bhaskar";
 String b = "bhaskar";
 String c = new String("bhaskar");
-🧠 Memory Concept:
 
-✅ String Pool:
+Memory Concept:
+String Pool:
 
-Copy code
 [ String Pool ]
 "bhaskar"  <--- a, b
 🟨 Heap Memory:
@@ -112,45 +102,27 @@ Memory Representation:
 
 ## why it happence 
 ## 🔹 What is String Pool?
-
 In Java, String is a special class because it is immutable.
-
 To optimize memory, Java maintains a special memory area called the String Constant Pool (SCP) inside the heap.
-
 Whenever you create a string literal like:
-
 String str1 = "bhaskar";
-
-
 Java checks if that string already exists in the pool:
-
 ✅ If it exists → the same object reference is reused.
-
 ❌ If it does not exist → a new object is created in the pool.   
 
 
 ## importent 
 ## 🔹 Interview Note (Short Answer):
-
 String Pool is a memory optimization technique where Java stores string literals.
-
 "bhaskar" is stored once in the pool, and reused when needed.
-
 str1 == str2 → true for literals (because they share same object).
-
 With new String(), == → false (different objects), but .equals() → true.
-
 ## 🔹 Important Interview Point
-
 All string literals (inside double quotes) are stored in the String Pool, which is inside the Heap.
-
 If you use 
 ## new String("aman"), then:
-
 A new object is created inside Heap (outside the pool).
-
 But "aman" (the literal) will still go to the pool.
-
 Example:
 
 
@@ -159,67 +131,42 @@ Example:
 String str = "Hello";
 str = str + 'A';  // This creates a new string "HelloA" and assigns it to str
 "Hello" is stored in memory.
-
 'A' is added.
-
 A new String "HelloA" is created.
-
 The reference str now points to "HelloA", and the old "Hello" is still in memory (might be garbage collected later).
-
 🧠 Think of it like:
 You're not changing the original paper ("Hello"), you're copying it to a new paper, adding "A", and keeping the new version.
-
 📌 Why is this done?
 Thread safety (no accidental change by multiple threads)
-
 Memory efficiency (uses String pool)
-
 Security and reliability (commonly used in passwords, URLs, etc.)
-
-
 
 ## If you need a mutable alternative:
 Use StringBuilder or StringBuffer for frequent modifications:
-
 StringBuilder sb = new StringBuilder("Hello");
 sb.append('A'); // Modifies original object
 System.out.println(sb); // HelloA
 
-
-
 System.out.println('a' + 'b');
 👉 What's happening?
 'a' and 'b' are char literals.
-
 In Java, char is a primitive type (not a String).
-
 When you use + with two char values, Java adds their Unicode (ASCII) values.
-
 🔢 Unicode Values:
 'a' = 97
-
 'b' = 98
-
 ✅ Result:
-java
-Copy code
 97 + 98 = 195
 ➡ Output:
 195
 
 ✅ Code 2:
-
 System.out.println("a" + "b");
 👉 What's happening?
 "a" and "b" are String literals.
-
 The + operator concatenates strings (i.e., joins them).
-
-
-
 "a" + "b" = "ab"
 ➡ Output:
-
 ab
 ✅ Code 3:
 
@@ -289,3 +236,20 @@ Converts the other thing to a string (via .toString())
 
 Then performs String concatenation
 
+\\///////
+
+
+Do new String objects go into pool?
+
+❌ NO
+Strings created using new String() do NOT go into pool automatically even if content is same.
+
+But you can force them by using .intern()
+
+⭐ .intern() Method
+String s1 = new String("Hello");
+String s2 = s1.intern();
+
+
+➡ s2 will now point to pool object
+➡ s1 still points to heap object

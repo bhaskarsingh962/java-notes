@@ -6,8 +6,6 @@ Feature	Description
 📏 Examples	int, float, char, boolean, double, long, short, byte.
 ❌ No methods	They don’t have methods or properties.
 
-java
-Copy code
 int x = 10;   // primitive int
 ## 🔹 2. Objects (Reference Types)
 Feature	Description
@@ -22,20 +20,12 @@ Feature	Description
 
 ## ArrayList<Integer> list = new ArrayList<>();
 The initial capacity is usually 10 (internally).
-
 But the size is 0 until you add elements.
-
 Every time the internal capacity is exceeded, it grows automatically (usually 1.5x or 2x).
-
-
 array is the part of Java language core (java)	
 Array list is the part of Java Collections Framework (java.util)
-
-
 int vss integer
 ## Example Code: Difference in Usage
-java
-Copy code
 public class Main {
     public static void main(String[] args) {
         // ✅ int: primitive type
@@ -62,15 +52,8 @@ public class Main {
 }
 
 ✅ Use int for simple, fast, memory-efficient operations.
-
 ✅ Use Integer when you need an object, nullability, or want to store numbers in Collections.
-
-
-
 Sure, Bhaskar! Let's break down this Java statement step by step:
-
-java
-Copy code
 ArrayList<Integer> li = new ArrayList<>();
 ✅ Full Breakdown
 1. ArrayList
@@ -78,9 +61,7 @@ ArrayList is a class in Java (from java.util package) that implements the List i
 
 2. <Integer>
 This is a generic type that specifies the type of elements the list will store.
-
 Integer is a wrapper class for the primitive int.
-
 So ArrayList<Integer> means this list can store Integer objects only (not Strings, Doubles, etc.).
 
 3. li
@@ -88,25 +69,16 @@ This is just the variable name. You can name it anything (like list, numbers, et
 
 4. = new ArrayList<>()
 This is the constructor call. It creates a new instance of ArrayList.
-
 The diamond operator <> tells the compiler to infer the generic type from the left side (Integer here).
-
 So it's equivalent to writing:
-
-java
-Copy code
 new ArrayList<Integer>()
+
 5. Final Meaning
 This line:
 
-java
-Copy code
 ArrayList<Integer> li = new ArrayList<>();
 ➡ Creates a dynamic list named li that can store Integer objects.
 
-✅ Example Code
-java
-Copy code
 import java.util.ArrayList;
 
 public class Main {
@@ -126,9 +98,7 @@ Fixed size	✅ Yes	❌ No (resizable)
 Add/remove	❌ Not flexible	✅ Easy to add/remove
 Stores primitives	✅ Yes (e.g., int)	❌ Uses wrapper (Integer)
 Collections use	❌ No	✅ Yes
-
 Let me know if you want a visual diagram or want to compare it with a normal array!
-
 this is all about arraylist
 
 
@@ -138,7 +108,6 @@ this is all about arraylist
 
 
 ## Can we make ArrayList of int type in Java?
-
 No, directly we cannot.
 Because ArrayList works only with objects, not with primitive data types like int, char, double, etc.
 

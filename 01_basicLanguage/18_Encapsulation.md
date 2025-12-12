@@ -12,14 +12,10 @@ and also you can set value by setter method
 
 📌 Definition:
 Encapsulation is the process of wrapping data (variables) and code (methods) into a single unit (class), and restricting direct access to some of the object's components.
-
 🔐 Key Points:
 It hides the internal state of the object from the outside world.
-
 Achieved using private fields and public getters/setters.
-
 Improves security and maintainability of code.
-
 Ensures controlled access to fields.
 
 
@@ -80,15 +76,11 @@ Abstraction is the process of hiding unnecessary details and showing only essent
 
 🔍 Key Points:
 Helps focus on what an object does instead of how.
-
 Achieved using:
-
 Abstract classes
-
 Interfaces
 
 🧠 Example:
-
 abstract class Animal {
     abstract void makeSound();  // only declaration, not implementation
 

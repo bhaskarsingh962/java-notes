@@ -1,14 +1,10 @@
 ## 1. Procedural Programming
 
 A style where you write step-by-step instructions (procedures) for the computer to follow. Focus is on functions, not data.
-
 🔧 Key Idea:
 Code is organized into functions (also called procedures).
-
 Follows top-to-bottom execution.
-
 No concept of classes/objects.
-
 💻 Example (C Language):
 c
 Copy code
@@ -51,41 +47,24 @@ printReport(studentName, marks);
 ## 2. Functional Programming
 Definition:
 Programming using pure functions, where data is immutable and there's no shared state. Focus is on what to solve, not how.
-
 🔧 Key Idea:
 Avoids changing state.
-
 Emphasizes function composition.
-
 Often uses recursion instead of loops.
-
 💻 Example (JavaScript):
-js
-
 const square = x => x * x;
 const numbers = [1, 2, 3, 4];
 const squares = numbers.map(square); // [1, 4, 9, 16]
-
 console.log(squares);
 ✅ Used in: Haskell, Scala, JavaScript, Lisp, Python (partially)
 
 
-
-
-
-
-
 ## 3. Object-Oriented Programming (OOP)
-Definition:
 Organizes code into objects, which are instances of classes. Emphasizes encapsulation, inheritance, and polymorphism.
 
-🔧 Key Idea:
 Code is structured around objects and classes.
-
 Encapsulates data + behavior together.
-
 Encourages reusability and modularity.
-
 💻 Example (Java):
 java
 Copy code
@@ -116,39 +95,27 @@ public class Main {
 ## What is a Static Language?
 Definition:
 A static language checks types at compile time — before the program runs.
-
-💡 Key Point:
 Variable types are known and fixed before execution.
-
 Errors are caught early during development.
-
 📦 Real-World Analogy:
 Imagine submitting a form that won’t let you proceed unless every field is perfectly filled and validated. That’s like static typing — strict but safe.
-
 💻 Example: Java (Static Language)
-java
-Copy code
+
 int age = 25;       // Declaring a variable with a specific type
 age = "twenty";     // ❌ Compile-time error: type mismatch
 ✅ Pros:
 Early error detection (at compile time)
-
 Better IDE support & auto-completion
-
 Easier to optimize for performance
 
 ❌ Cons:
 More boilerplate code
-
 Slower prototyping
 
 ## ✅ What is a Dynamic Language?
-Definition:
 A dynamic language checks types at runtime — when the program is running.
-
 💡 Key Point:
 Variable types are not declared explicitly.
-
 Variables can change type dynamically.
 
 📦 Real-World Analogy:

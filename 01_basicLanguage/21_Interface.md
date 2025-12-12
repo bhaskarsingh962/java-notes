@@ -12,7 +12,6 @@ They belong to the interface itself, not to the objects. This is because interfa
 3. final
 They are constants. You are not allowed to change interface variables once initialized.
 
-
 ## 4 - Can You Declare Interface Variables Without public static final?
 ❌ No, you cannot.
 Even if you don't write public static final, Java adds them by default.
@@ -30,11 +29,8 @@ interface Test {
 
 
 You cannot make an interface variable:
-
 non-static (i.e., instance variable)
-
 non-final (i.e., changeable)
-
 or private/protected (not allowed)
 
 

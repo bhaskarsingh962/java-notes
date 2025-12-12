@@ -4,21 +4,13 @@ Inner classes are classes defined inside another class.
 They are mainly used for better encapsulation, logical grouping, and event handling (UI, Threads, etc.).
 
 There are 4 types of inner classes:
-
 Non-static (Member) Inner Class
-
 Static Nested Class
-
 Local Inner Class
-
 Anonymous Inner Class
-
 🧩 1️⃣ Non-static (Member) Inner Class
-
 ➡️ Defined inside a class, outside any method, without static keyword.
-
 🧠 Realistic Example
-
 Let’s imagine we are building an app that tracks User and their Address.
 
 class User {
@@ -64,6 +56,8 @@ Access outer class variables	✅ Yes (even private)
 Requires outer class object	✅ Yes
 Declared as static	❌ Not allowed
 Common use	When inner class logically depends on outer class instance
+
+
 🧩 2️⃣ Static Nested Class
 
 ➡️ Declared inside another class, but with static keyword.
@@ -113,9 +107,7 @@ Common use	Helper / utility classes within outer class
 Used when class is needed only within that method.
 
 🧠 Realistic Example
-
 In a banking system, inside a method for transaction, we might have a local class for generating temporary receipt.
-
 class Bank {
     public void processTransaction(int amount) {
         class Receipt { // Local inner class
